@@ -1295,7 +1295,10 @@
   .hero-grid,
   .about-grid,
   .booking-wrap,
-  .contact-grid {
+  .contact-grid,
+  .experience-grid,
+  .patient-grid,
+  .story-panel {
     grid-template-columns: 1fr;
   }
 
@@ -1308,7 +1311,13 @@
   .services-grid,
   .test-grid,
   .future-grid,
-  .footer-grid {
+  .footer-grid,
+  .info-grid,
+  .faq-box-list,
+  .contact-support-grid,
+  .about-extended-grid,
+  .promise-grid,
+  .stats-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1318,6 +1327,13 @@
 
   .timeline::before {
     display: none;
+  }
+
+  .page-box,
+  .white-form,
+  .contact-panel,
+  .story-panel {
+    padding: 22px 18px;
   }
 }
 
@@ -1358,7 +1374,21 @@
   .future-grid,
   .footer-grid,
   .form-grid,
-  .timeline {
+  .timeline,
+  .info-grid,
+  .faq-box-list,
+  .contact-support-grid,
+  .about-extended-grid,
+  .promise-grid,
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-panel,
+  .experience-grid,
+  .patient-grid,
+  .contact-grid,
+  .booking-wrap {
     grid-template-columns: 1fr;
   }
 
@@ -1375,5 +1405,26 @@
 
   .booking-form {
     padding: 20px 16px;
+  }
+
+  .page-box,
+  .white-form,
+  .contact-panel,
+  .story-panel,
+  .info-card,
+  .service-card,
+  .test-card,
+  .future-card,
+  .feature-card,
+  .faq-item {
+    border-radius: 18px;
+  }
+
+  .page-header h1,
+  .section-heading h2,
+  .about-content h2,
+  .story-copy h2,
+  .experience-copy h2 {
+    line-height: 1.18;
   }
 }
