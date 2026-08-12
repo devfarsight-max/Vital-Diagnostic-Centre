@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { HeartPulse, Menu, X } from 'lucide-react'
-import { NavLink, Route, Routes } from 'react-router-dom'
+import { NavLink, Route, Routes, useLocation } from 'react-router-dom'
 import './App.css'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
@@ -16,11 +16,23 @@ const navItems = [
   { label: 'Contact', to: '/contact' },
 ]
 
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }, [pathname])
+
+  return null
+}
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <div className="app-shell">
+    <>
+      <ScrollToTop />
+      <div className="app-shell">
       <header className="topbar">
         <div className="container navbar">
           <NavLink to="/" className="brand" aria-label="Vital Diagnostic Centre home" onClick={() => setMenuOpen(false)}>
@@ -133,6 +145,7 @@ function App() {
         </div>
       </footer>
     </div>
+    </>
   )
 }
 

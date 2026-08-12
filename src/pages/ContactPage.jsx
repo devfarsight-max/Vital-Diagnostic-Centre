@@ -1,5 +1,6 @@
+import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { Clock3, Mail, MapPin, Phone } from 'lucide-react'
+import { Clock3, Mail, MapPin, Phone, ShieldCheck } from 'lucide-react'
 
 const contactDetails = [
   { icon: Phone, label: 'Phone', value: '[PHONE NUMBER]', href: 'tel:[PHONE NUMBER]' },
@@ -17,6 +18,48 @@ const initialFormState = {
   date: '',
   time: '',
   message: '',
+}
+
+const visitHighlights = [
+  'Warm and helpful front-desk support',
+  'Comfortable testing environment and guidance',
+  'Clear communication around results and next steps',
+]
+
+const supportOptions = [
+  'Appointments for routine blood tests and preventive screening',
+  'Support for health monitoring and follow-up recommendations',
+  'Guidance for first-time patients and family bookings',
+]
+
+const bookingSteps = [
+  'Tell us which test or health concern you need help with.',
+  'Share your preferred date and time for a smooth visit.',
+  'Our team confirms the details and prepares the process for you.',
+]
+
+const faqItems = [
+  {
+    question: 'Do I need an appointment for every test?',
+    answer: 'Appointments are recommended to help us plan the visit comfortably and keep the process efficient.',
+  },
+  {
+    question: 'Can I ask for guidance before choosing a test?',
+    answer: 'Yes. Our team can help you understand which tests are relevant to your health concerns and schedule.',
+  },
+  {
+    question: 'Are the services suitable for family health checks?',
+    answer: 'Yes. Many patients use our centre for routine family testing, monitoring and preventive care.',
+  },
+]
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 26 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: 'easeOut' },
+  },
 }
 
 export default function ContactPage() {
@@ -71,14 +114,23 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="page-shell section">
+    <motion.div
+      className="page-shell section"
+      initial="hidden"
+      animate="visible"
+      variants={fadeUp}
+    >
       <div className="container contact-wrap">
-        <div className="contact-heading">
+        <motion.div className="contact-heading" variants={fadeUp}>
           <span className="section-tag">Contact</span>
           <h1>We&apos;re Here to Help</h1>
-        </div>
+          <p>
+            Speak with our team to book a check-up, discuss available tests or get support for your
+            next healthcare decision. We aim to make every conversation helpful, clear and stress-free.
+          </p>
+        </motion.div>
 
-        <div className="contact-grid">
+        <motion.div className="contact-grid" variants={fadeUp}>
           <div className="contact-panel">
             {contactDetails.map(({ icon: Icon, label, value, href }) => (
               <a
@@ -99,19 +151,13 @@ export default function ContactPage() {
             ))}
 
             <div className="quick-actions">
-              <a href="tel:[PHONE NUMBER]" className="btn btn-primary">
-                Call Us
-              </a>
-              <a href="https://wa.me/[WHATSAPP NUMBER]" className="btn btn-secondary">
-                WhatsApp
-              </a>
-              <a href="#contact" className="btn btn-secondary">
-                Get Directions
-              </a>
+              <a href="tel:[PHONE NUMBER]" className="btn btn-primary">Call Us</a>
+              <a href="https://wa.me/[WHATSAPP NUMBER]" className="btn btn-secondary">WhatsApp</a>
+              <a href="#contact" className="btn btn-secondary">Get Directions</a>
             </div>
           </div>
 
-          <div className="booking-form white-form" onSubmit={handleSubmit}>
+          <motion.div className="booking-form white-form" onSubmit={handleSubmit} variants={fadeUp}>
             <h2>Need a Diagnostic Test?</h2>
             <p className="booking-intro">Request your test today and our team can help you with the next steps.</p>
 
@@ -203,9 +249,78 @@ export default function ContactPage() {
 
               {successMessage && <p className="success-message">{successMessage}</p>}
             </form>
+          </motion.div>
+        </motion.div>
+
+        <motion.div className="contact-support-grid mt-large" variants={fadeUp}>
+          <div className="page-box">
+            <span className="section-tag">Support we offer</span>
+            <h2>How we can help</h2>
+            <ul className="feature-list">
+              {supportOptions.map((item) => (
+                <li key={item}>
+                  <ShieldCheck size={18} />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
+
+          <div className="page-box">
+            <span className="section-tag">Booking steps</span>
+            <h2>Simple process</h2>
+            <ol className="steps-list">
+              {bookingSteps.map((step, index) => (
+                <li key={step}>
+                  <span>{index + 1}</span>
+                  <p>{step}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </motion.div>
+
+        <motion.div className="story-panel contact-panel-extra" variants={fadeUp}>
+          <div className="story-copy">
+            <span className="section-tag">Visit experience</span>
+            <h2>Comfortable care from the moment you arrive</h2>
+            <ul className="feature-list compact-list">
+              {visitHighlights.map((item) => (
+                <li key={item}>
+                  <ShieldCheck size={18} />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="story-image">
+            <img
+              src="/images/WhatsApp%20Image%202026-08-08%20at%2012.19.55%20PM.jpeg"
+              alt="Modern healthcare clinic with a calm patient environment"
+            />
+          </div>
+        </motion.div>
+
+        <motion.div className="faq-stack mt-large" variants={fadeUp}>
+          <div className="section-heading center-heading">
+            <span className="section-tag">FAQ</span>
+            <h2>Common questions from patients</h2>
+          </div>
+          <div className="faq-box-list">
+            {faqItems.map(({ question, answer }, index) => (
+              <motion.article
+                key={question}
+                className="faq-box-item"
+                variants={fadeUp}
+                transition={{ delay: index * 0.08 }}
+              >
+                <h3>{question}</h3>
+                <p>{answer}</p>
+              </motion.article>
+            ))}
+          </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   )
 }
