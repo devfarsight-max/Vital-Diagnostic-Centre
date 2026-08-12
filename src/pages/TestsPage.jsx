@@ -10,6 +10,10 @@ const popularTests = [
   { title: 'KFT', text: 'Assess kidney health and function markers for timely clinical insight.' },
   { title: 'Hormonal Tests', text: 'Support evaluation of endocrine function and overall balance.' },
   { title: 'Biochemistry Tests', text: 'Assess vital body functions, metabolism and organ health markers.' },
+  { title: 'Vitamin / Nutritional Tests', text: 'Monitor nutritional status and support better wellness planning and lifestyle recommendations.' },
+  { title: 'Renal Function Panel', text: 'Review kidney health markers with a more focused assessment for ongoing monitoring.' },
+  { title: 'Liver Health Check', text: 'Help identify patterns in liver function and support early intervention or monitoring plans.' },
+  { title: 'General Wellness Screen', text: 'A broad overview test package for preventive care and routine health understanding.' },
 ]
 
 const preparationTips = [
@@ -21,15 +25,34 @@ const preparationTips = [
 const testCategories = [
   {
     title: 'General health',
-    list: ['CBC / Blood Test', 'Biochemistry', 'HbA1c'],
+    list: ['CBC / Blood Test', 'Biochemistry', 'HbA1c', 'General Wellness Screen'],
   },
   {
     title: 'Heart and metabolic health',
-    list: ['Lipid Profile', 'LFT', 'KFT'],
+    list: ['Lipid Profile', 'LFT', 'KFT', 'Renal Function Panel'],
   },
   {
     title: 'Hormonal and endocrine',
-    list: ['Thyroid / TSH', 'Hormonal Tests'],
+    list: ['Thyroid / TSH', 'Hormonal Tests', 'Vitamin / Nutritional Tests'],
+  },
+  {
+    title: 'Preventive monitoring',
+    list: ['Routine checkups', 'Family health review', 'Lifestyle-related screening'],
+  },
+]
+
+const patientSupport = [
+  {
+    title: 'For routine screenings',
+    text: 'Support preventive care and help identify health patterns before they become larger concerns.',
+  },
+  {
+    title: 'For ongoing health tracking',
+    text: 'Monitor changes in health over time and make follow-up decisions with clearer information.',
+  },
+  {
+    title: 'For healthy decision-making',
+    text: 'Turn test results into practical next steps for diet, lifestyle and medical follow-up.',
   },
 ]
 
@@ -113,6 +136,23 @@ export default function TestsPage() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
+            </motion.article>
+          ))}
+        </motion.div>
+
+        <motion.div className="mt-large info-grid" variants={fadeUp}>
+          {patientSupport.map(({ title, text }, index) => (
+            <motion.article
+              key={title}
+              className="info-card"
+              variants={fadeUp}
+              transition={{ delay: index * 0.08 }}
+            >
+              <div className="icon-box">
+                <ShieldCheck size={22} />
+              </div>
+              <h3>{title}</h3>
+              <p>{text}</p>
             </motion.article>
           ))}
         </motion.div>

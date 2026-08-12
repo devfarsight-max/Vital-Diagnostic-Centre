@@ -49,6 +49,25 @@ const keyBenefits = [
     title: 'For family wellbeing',
     text: 'Offer practical testing support for the whole family and help guide health decisions with confidence.',
   },
+  {
+    title: 'For quicker clinical decisions',
+    text: 'Give clinicians and patients timely insight into disease risk, organ health and treatment follow-up needs.',
+  },
+  {
+    title: 'For stress-free visits',
+    text: 'Make health visits feel more organised and clear through simple scheduling, guidance and patient support.',
+  },
+  {
+    title: 'For healthier routines',
+    text: 'Support regular checkups that encourage better daily health habits and long-term wellness planning.',
+  },
+]
+
+const supportPackages = [
+  'Routine wellness screening packages',
+  'Family health checkup guidance',
+  'Pre-employment and preventive health assessments',
+  'Follow-up testing for ongoing medical monitoring',
 ]
 
 const fadeUp = {
@@ -138,6 +157,24 @@ export default function ServicesPage() {
               </motion.article>
             ))}
           </div>
+        </motion.div>
+
+        <motion.div className="mt-large page-box" variants={fadeUp}>
+          <span className="section-tag">Support packages</span>
+          <h2>Practical healthcare support for real-life needs</h2>
+          <p>
+            We help patients plan better care around everyday life, whether they need a routine blood
+            screening, blood sugar monitoring, family health review or follow-up support for a chronic
+            condition. Our goal is to make testing more practical, responsive and easy to understand.
+          </p>
+          <ul className="feature-list">
+            {supportPackages.map((item) => (
+              <li key={item}>
+                <ShieldCheck size={18} />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         </motion.div>
 
         <motion.div className="future-section mt-large" variants={fadeUp}>

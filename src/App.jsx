@@ -95,17 +95,20 @@ function App() {
 
       <footer className="site-footer">
         <div className="container footer-grid">
-          <div className="footer-brand">
+          <div className="footer-brand footer-column">
             <div className="brand footer-brand-row">
               <span className="brand-mark">
                 <HeartPulse size={18} />
               </span>
               <span className="brand-text">Vital Diagnostic Centre</span>
             </div>
-            <p>Reliable Diagnostics. Better Healthcare.</p>
+            <p>Reliable diagnostics and compassionate care for everyday health decisions.</p>
+            <a href="/contact" className="btn btn-primary btn-footer">
+              Book a Test
+            </a>
           </div>
 
-          <div>
+          <div className="footer-column">
             <h3>Quick Links</h3>
             <ul>
               <li><NavLink to="/">Home</NavLink></li>
@@ -116,8 +119,8 @@ function App() {
             </ul>
           </div>
 
-          <div>
-            <h3>Services</h3>
+          <div className="footer-column">
+            <h3>Popular Tests</h3>
             <ul>
               <li>Blood Tests</li>
               <li>Biochemistry</li>
@@ -130,12 +133,12 @@ function App() {
             </ul>
           </div>
 
-          <div>
+          <div className="footer-column">
             <h3>Contact</h3>
-            <ul>
-              <li>Phone</li>
-              <li>Email</li>
-              <li>Address</li>
+            <ul className="footer-contact-list">
+              <li><a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a></li>
+              <li><a href="mailto:care@vitaldiagnosticcentre.com">care@vitaldiagnosticcentre.com</a></li>
+              <li>123 Health Avenue, Your City</li>
             </ul>
           </div>
         </div>

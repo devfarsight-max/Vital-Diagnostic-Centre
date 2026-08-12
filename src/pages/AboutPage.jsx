@@ -6,34 +6,57 @@ const highlights = [
   'Affordable Diagnostic Care',
   'Timely Reports',
   'Patient-Focused Service',
+  'Prevention-First Guidance',
+  'Clear Communication',
 ]
 
 const values = [
   {
     title: 'Accuracy First',
-    text: 'Every sample and evaluation is treated with care, focus and attention to detail.',
+    text: 'Every sample and evaluation is treated with care, focus and attention to detail so patients can trust the information they receive.',
   },
   {
     title: 'Patient Comfort',
-    text: 'We aim to reduce stress by making the experience clear, calm and respectful.',
+    text: 'We aim to reduce stress by making the experience clear, calm and respectful from the first phone call to final reporting.',
   },
   {
     title: 'Transparent Care',
-    text: 'We keep communication simple so patients know what to expect before and after testing.',
+    text: 'We keep communication simple so patients know what to expect before, during and after testing and follow-up.',
+  },
+  {
+    title: 'Community Support',
+    text: 'Our focus is on supporting families, workers and everyday patients with practical diagnostics that fit real life.',
   },
 ]
 
 const servicePhilosophy = [
-  'We believe better care starts with timely information and practical support.',
-  'Our approach blends compassionate service with strong diagnostic discipline.',
-  'We aim to remove confusion so patients feel empowered to take the next step.',
+  'We believe better care starts with timely information and practical support for each patient.',
+  'Our approach blends compassionate service with strong diagnostic discipline and evidence-based care.',
+  'We aim to remove confusion so patients feel empowered to take the next step with confidence.',
+  'Each consultation is designed to help patients understand the purpose and value of their test clearly.',
 ]
 
 const communityCare = [
-  'Routine preventive testing and health checkups',
-  'Monitoring long-term conditions with clear follow-up',
-  'Support for family health planning and early intervention',
-  'Simple access to trusted testing information',
+  'Routine preventive testing and health checkups for early detection and peace of mind',
+  'Monitoring long-term conditions with clear follow-up and practical guidance',
+  'Support for family health planning, lifestyle assessment and early intervention',
+  'Simple access to trusted testing information and patient-friendly scheduling',
+  'Helping working families and individuals manage health without unnecessary stress',
+]
+
+const patientJourney = [
+  {
+    title: 'Initial Consultation',
+    text: 'We listen to patient concerns and recommend the most relevant tests for their health goals and symptoms.',
+  },
+  {
+    title: 'Comfortable Testing',
+    text: 'Our process is designed to be efficient, respectful and simple, with patient comfort at the centre of every step.',
+  },
+  {
+    title: 'Results & Guidance',
+    text: 'We provide clear reporting and practical next-step support so patients know exactly what to do afterwards.',
+  },
 ]
 
 const fadeUp = {
@@ -156,6 +179,23 @@ export default function AboutPage() {
             </ul>
           </div>
         </div>
+
+        <motion.div className="mt-large info-grid" variants={fadeUp}>
+          {patientJourney.map(({ title, text }, index) => (
+            <motion.article
+              key={title}
+              className="info-card"
+              variants={fadeUp}
+              transition={{ delay: index * 0.08 }}
+            >
+              <div className="icon-box">
+                {index === 0 ? <Stethoscope size={22} /> : index === 1 ? <ShieldCheck size={22} /> : <HeartPulse size={22} />}
+              </div>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </motion.article>
+          ))}
+        </motion.div>
       </div>
     </motion.div>
   )
