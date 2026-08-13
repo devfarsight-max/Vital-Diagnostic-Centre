@@ -1,16 +1,202 @@
-import { ArrowRight, ArrowUpRight, Check, CheckCircle2, Clock3, FlaskConical, HeartPulse, ShieldCheck } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Check,
+  CheckCircle2,
+  Clock3,
+  FlaskConical,
+  HeartPulse,
+  ShieldCheck,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 
-const services=[['Blood testing','Routine and specialised blood investigations.'],['Biochemistry','Insight into organ function and metabolism.'],['Hormone testing','Thyroid and endocrine health assessments.'],['Health packages','Thoughtful screening for every life stage.']]
+const services = [
+  ["Blood testing", "Routine and specialised blood investigations."],
+  ["Biochemistry", "Insight into organ function and metabolism."],
+  ["Hormone testing", "Thyroid and endocrine health assessments."],
+  ["Health packages", "Thoughtful screening for every life stage."],
+];
 
-export default function HomePage(){return <>
-  <section className="hero"><div className="container hero-grid">
-    <div className="hero-copy"><span className="eyebrow">Local care, laboratory precision</span><h1>Answers that move your health <span>forward.</span></h1><p className="lead">Reliable diagnostic testing, clear guidance and a patient-first experience—all in one trusted neighbourhood centre.</p><div className="hero-actions"><Link className="button button-dark" to="/contact">Book your test <ArrowUpRight size={18}/></Link><Link className="button button-outline" to="/tests">Explore all tests</Link></div><div className="micro-proof"><span><CheckCircle2 size={16}/> Timely reports</span><span><CheckCircle2 size={16}/> Trained professionals</span><span><CheckCircle2 size={16}/> Patient-first care</span></div></div>
-    <div className="hero-media"><img src="/images/WhatsApp%20Image%202026-08-08%20at%2012.19.53%20PM.jpeg" alt="Vital Diagnostic Centre laboratory team and equipment"/><div className="hero-card"><strong>Testing made simpler</strong><span>Call, WhatsApp or request an appointment online.</span></div></div>
-  </div></section>
-  <section className="trust-strip"><div className="container trust-grid"><div className="trust-item"><ShieldCheck/><div><strong>Reliable results</strong><span>Careful, consistent processes</span></div></div><div className="trust-item"><Clock3/><div><strong>Timely reporting</strong><span>Clear turnaround guidance</span></div></div><div className="trust-item"><HeartPulse/><div><strong>Patient focused</strong><span>Calm, respectful support</span></div></div><div className="trust-item"><FlaskConical/><div><strong>Modern equipment</strong><span>Purpose-built diagnostics</span></div></div></div></section>
-  <section className="section"><div className="container"><div className="section-head"><div><span className="eyebrow">What we test</span><h2>Essential diagnostics,<br/>all under one roof.</h2></div><p>From routine checkups to focused monitoring, find the test you need with straightforward support at every step.</p></div><div className="services-list">{services.map(([name,text],i)=><Link to="/services" className="service-row" key={name}><span className="service-number">0{i+1}</span><h3>{name}</h3><p>{text}</p><span className="arrow"><ArrowRight size={17}/></span></Link>)}</div></div></section>
-  <section className="section soft-section"><div className="container split"><div className="split-media"><img src="/images/WhatsApp%20Image%202026-08-08%20at%2012.19.54%20PM%20(1).jpeg" alt="Diagnostic laboratory equipment at Vital Diagnostic Centre"/><div className="stat-tile"><strong>01</strong><span>centre focused on your everyday health needs</span></div></div><div><span className="eyebrow">Why Vital</span><h2>Clinical confidence, with a human touch.</h2><p className="lead">Healthcare can feel complicated. Our role is to make your testing experience calm, transparent and easy to understand.</p><ul className="check-list"><li><Check size={19}/>Clear preparation guidance before your visit</li><li><Check size={19}/>Respectful sample collection and patient support</li><li><Check size={19}/>Simple communication about reports and next steps</li></ul><Link className="button button-dark" to="/about">Meet Vital <ArrowRight size={17}/></Link></div></div></section>
-  <section className="section"><div className="container"><div className="section-head"><div><span className="eyebrow">Your visit</span><h2>Three steps to clarity.</h2></div></div><div className="steps"><div className="step"><span className="step-number">1</span><h3>Choose your test</h3><p>Explore common tests or speak with our team for guidance.</p></div><div className="step"><span className="step-number">2</span><h3>Visit the centre</h3><p>Arrive at your chosen time for a smooth sample collection.</p></div><div className="step"><span className="step-number">3</span><h3>Receive your report</h3><p>Get clear results within the advised turnaround time.</p></div></div></div></section>
-  <div className="container cta-band"><h2>Ready to take the next step for your health?</h2><Link className="button button-lime" to="/contact">Request an appointment <ArrowUpRight size={18}/></Link></div>
-  </>}
+export default function HomePage() {
+  return (
+    <>
+      <section className="hero">
+        <div className="container hero-grid">
+          <div className="hero-copy">
+            <span className="eyebrow">Local care, laboratory precision</span>
+            <h1>
+              Answers that move your health <span>forward.</span>
+            </h1>
+            <p className="lead">
+              Reliable diagnostic testing, clear guidance and a patient-first
+              experience—all in one trusted neighbourhood centre.
+            </p>
+            <div className="hero-actions">
+              <Link className="button button-dark" to="/contact">
+                Book your test <ArrowUpRight size={18} />
+              </Link>
+              <Link className="button button-outline" to="/tests">
+                Explore all tests
+              </Link>
+            </div>
+            <div className="micro-proof">
+              <span>
+                <CheckCircle2 size={16} /> Timely reports
+              </span>
+              <span>
+                <CheckCircle2 size={16} /> Trained professionals
+              </span>
+              <span>
+                <CheckCircle2 size={16} /> Patient-first care
+              </span>
+            </div>
+          </div>
+          <div className="hero-media">
+            <img
+              src="/images/WhatsApp%20Image%202026-08-08%20at%2012.19.53%20PM.jpeg"
+              alt="Vital Diagnostic Centre laboratory team and equipment"
+            />
+            <div className="hero-card">
+              <strong>Testing made simpler</strong>
+              <span>Call, WhatsApp or request an appointment online.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="trust-strip">
+        <div className="container trust-grid">
+          <div className="trust-item">
+            <ShieldCheck />
+            <div>
+              <strong>Reliable results</strong>
+              <span>Careful, consistent processes</span>
+            </div>
+          </div>
+          <div className="trust-item">
+            <Clock3 />
+            <div>
+              <strong>Timely reporting</strong>
+              <span>Clear turnaround guidance</span>
+            </div>
+          </div>
+          <div className="trust-item">
+            <HeartPulse />
+            <div>
+              <strong>Patient focused</strong>
+              <span>Calm, respectful support</span>
+            </div>
+          </div>
+          <div className="trust-item">
+            <FlaskConical />
+            <div>
+              <strong>Modern equipment</strong>
+              <span>Purpose-built diagnostics</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <span className="eyebrow">What we test</span>
+              <h2>
+                Essential diagnostics,
+                <br />
+                all under one roof.
+              </h2>
+            </div>
+            <p>
+              From routine checkups to focused monitoring, find the test you
+              need with straightforward support at every step.
+            </p>
+          </div>
+          <div className="services-list">
+            {services.map(([name, text], i) => (
+              <Link to="/services" className="service-row" key={name}>
+                <span className="service-number">0{i + 1}</span>
+                <h3>{name}</h3>
+                <p>{text}</p>
+                <span className="arrow">
+                  <ArrowRight size={17} />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="section soft-section">
+        <div className="container split">
+          <div className="split-media">
+            <img
+              src="/images/WhatsApp%20Image%202026-08-08%20at%2012.19.54%20PM%20(1).jpeg"
+              alt="Diagnostic laboratory equipment at Vital Diagnostic Centre"
+            />
+            <div className="stat-tile">
+              <strong>01</strong>
+              <span>centre focused on your everyday health needs</span>
+            </div>
+          </div>
+          <div>
+            <span className="eyebrow">Why Vital</span>
+            <h2>Clinical confidence, with a human touch.</h2>
+            <p className="lead">
+              Healthcare can feel complicated. Our role is to make your testing
+              experience calm, transparent and easy to understand.
+            </p>
+            <ul className="check-list">
+              <li>
+                <Check size={19} />
+                Clear preparation guidance before your visit
+              </li>
+              <li>
+                <Check size={19} />
+                Respectful sample collection and patient support
+              </li>
+              <li>
+                <Check size={19} />
+                Simple communication about reports and next steps
+              </li>
+            </ul>
+            <Link className="button button-dark" to="/about">
+              Meet Vital <ArrowRight size={17} />
+            </Link>
+          </div>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <span className="eyebrow">Your visit</span>
+              <h2>Three steps to clarity.</h2>
+            </div>
+          </div>
+          <div className="steps">
+            <div className="step">
+              <span className="step-number">1</span>
+              <h3>Choose your test</h3>
+              <p>Explore common tests or speak with our team for guidance.</p>
+            </div>
+            <div className="step">
+              <span className="step-number">2</span>
+              <h3>Visit the centre</h3>
+              <p>Arrive at your chosen time for a smooth sample collection.</p>
+            </div>
+            <div className="step">
+              <span className="step-number">3</span>
+              <h3>Receive your report</h3>
+              <p>Get clear results within the advised turnaround time.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div className="container cta-band">
+        <h2>Ready to take the next step for your health?</h2>
+        <Link className="button button-lime" to="/contact">
+          Request an appointment <ArrowUpRight size={18} />
+        </Link>
+      </div>
+    </>
+  );
+}

@@ -1,3 +1,145 @@
-import { Check, HeartPulse, ShieldCheck, Stethoscope } from 'lucide-react'
-import { Link } from 'react-router-dom'
-export default function AboutPage(){return <><section className="page-hero"><div className="container"><span className="eyebrow">About Vital</span><h1>Good care begins with answers you can trust.</h1><p className="lead">We are building a more thoughtful diagnostic experience for our community—one that pairs disciplined laboratory work with clarity, kindness and respect.</p></div></section><section className="section"><div className="container split"><div><span className="eyebrow">Our purpose</span><h2>Diagnostics designed around real people.</h2><p className="lead">We believe patients deserve more than a report. They deserve an organised visit, honest communication and confidence in what comes next.</p><ul className="check-list"><li><Check size={19}/>Reliable testing and careful processes</li><li><Check size={19}/>Affordable, accessible diagnostic care</li><li><Check size={19}/>Patient-friendly guidance from start to finish</li><li><Check size={19}/>A prevention-first approach to better health</li></ul></div><div className="split-media"><img src="/images/WhatsApp%20Image%202026-08-08%20at%2012.19.55%20PM%20(1).jpeg" alt="Laboratory team working at Vital Diagnostic Centre"/></div></div></section><section className="section dark-section"><div className="container"><div className="section-head"><div><span className="eyebrow">What guides us</span><h2>Our values show up in every visit.</h2></div></div><div className="values-grid"><div className="value"><span>01</span><h3>Accuracy first</h3><p>We treat every sample and result with focus, care and attention to detail.</p></div><div className="value"><span>02</span><h3>Patient comfort</h3><p>We create a calm, respectful experience from booking through reporting.</p></div><div className="value"><span>03</span><h3>Clear communication</h3><p>We explain what to expect in simple language, without unnecessary confusion.</p></div><div className="value"><span>04</span><h3>Community care</h3><p>We make practical diagnostic support more accessible to local families.</p></div></div></div></section><section className="section"><div className="container"><div className="section-head"><div><span className="eyebrow">The Vital experience</span><h2>Care at every touchpoint.</h2></div></div><div className="cards"><div className="card"><div className="card-icon"><Stethoscope/></div><h3>Listen</h3><p>We begin by understanding your needs and helping you prepare.</p></div><div className="card"><div className="card-icon"><ShieldCheck/></div><h3>Test</h3><p>We follow careful processes designed for dependable results.</p></div><div className="card"><div className="card-icon"><HeartPulse/></div><h3>Support</h3><p>We communicate clearly so your next health decision feels easier.</p></div></div></div></section><div className="container cta-band"><h2>Experience diagnostics with clarity and care.</h2><Link className="button button-lime" to="/contact">Book a test</Link></div></>}
+import { Check, HeartPulse, ShieldCheck, Stethoscope } from "lucide-react";
+import { Link } from "react-router-dom";
+export default function AboutPage() {
+  return (
+    <>
+      <section className="page-hero">
+        <div className="container">
+          <span className="eyebrow">About Vital</span>
+          <h1>Good care begins with answers you can trust.</h1>
+          <p className="lead">
+            We are building a more thoughtful diagnostic experience for our
+            community—one that pairs disciplined laboratory work with clarity,
+            kindness and respect.
+          </p>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container split">
+          <div>
+            <span className="eyebrow">Our purpose</span>
+            <h2>Diagnostics designed around real people.</h2>
+            <p className="lead">
+              We believe patients deserve more than a report. They deserve an
+              organised visit, honest communication and confidence in what comes
+              next.
+            </p>
+            <ul className="check-list">
+              <li>
+                <Check size={19} />
+                Reliable testing and careful processes
+              </li>
+              <li>
+                <Check size={19} />
+                Affordable, accessible diagnostic care
+              </li>
+              <li>
+                <Check size={19} />
+                Patient-friendly guidance from start to finish
+              </li>
+              <li>
+                <Check size={19} />A prevention-first approach to better health
+              </li>
+            </ul>
+          </div>
+          <div className="split-media">
+            <img
+              src="/images/WhatsApp%20Image%202026-08-08%20at%2012.19.55%20PM%20(1).jpeg"
+              alt="Laboratory team working at Vital Diagnostic Centre"
+            />
+          </div>
+        </div>
+      </section>
+      <section className="section dark-section">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <span className="eyebrow">What guides us</span>
+              <h2>Our values show up in every visit.</h2>
+            </div>
+          </div>
+          <div className="values-grid">
+            <div className="value">
+              <span>01</span>
+              <h3>Accuracy first</h3>
+              <p>
+                We treat every sample and result with focus, care and attention
+                to detail.
+              </p>
+            </div>
+            <div className="value">
+              <span>02</span>
+              <h3>Patient comfort</h3>
+              <p>
+                We create a calm, respectful experience from booking through
+                reporting.
+              </p>
+            </div>
+            <div className="value">
+              <span>03</span>
+              <h3>Clear communication</h3>
+              <p>
+                We explain what to expect in simple language, without
+                unnecessary confusion.
+              </p>
+            </div>
+            <div className="value">
+              <span>04</span>
+              <h3>Community care</h3>
+              <p>
+                We make practical diagnostic support more accessible to local
+                families.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <span className="eyebrow">The Vital experience</span>
+              <h2>Care at every touchpoint.</h2>
+            </div>
+          </div>
+          <div className="cards">
+            <div className="card">
+              <div className="card-icon">
+                <Stethoscope />
+              </div>
+              <h3>Listen</h3>
+              <p>
+                We begin by understanding your needs and helping you prepare.
+              </p>
+            </div>
+            <div className="card">
+              <div className="card-icon">
+                <ShieldCheck />
+              </div>
+              <h3>Test</h3>
+              <p>
+                We follow careful processes designed for dependable results.
+              </p>
+            </div>
+            <div className="card">
+              <div className="card-icon">
+                <HeartPulse />
+              </div>
+              <h3>Support</h3>
+              <p>
+                We communicate clearly so your next health decision feels
+                easier.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div className="container cta-band">
+        <h2>Experience diagnostics with clarity and care.</h2>
+        <Link className="button button-lime" to="/contact">
+          Book a test
+        </Link>
+      </div>
+    </>
+  );
+}

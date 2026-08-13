@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
-import { ArrowUpRight, HeartPulse, Menu, Phone, X } from 'lucide-react'
+import { ArrowUpRight, Menu, Phone, X } from 'lucide-react'
 import { NavLink, Route, Routes, useLocation } from 'react-router-dom'
 import './App.css'
 import './Search.css'
+import './Brand.css'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import ServicesPage from './pages/ServicesPage'
@@ -33,7 +34,7 @@ export default function App() {
     <header className="header">
       <div className="container nav-wrap">
         <NavLink to="/" className="brand" onClick={() => setOpen(false)}>
-          <span className="brand-icon"><HeartPulse size={22}/></span>
+          <img className="brand-logo" src="/vital-logo.png" alt="Vital Diagnostic Centre logo"/>
           <span><strong>Vital</strong><small>Diagnostic Centre</small></span>
         </NavLink>
         <nav className="nav-links" aria-label="Main navigation">
@@ -56,7 +57,7 @@ export default function App() {
     </Routes></main>
     <footer className="footer">
       <div className="container footer-top">
-        <div><NavLink to="/" className="brand footer-logo"><span className="brand-icon"><HeartPulse size={22}/></span><span><strong>Vital</strong><small>Diagnostic Centre</small></span></NavLink><p>Thoughtful diagnostics for healthier everyday decisions.</p></div>
+        <div><NavLink to="/" className="brand footer-logo"><span className="footer-logo-box"><img className="brand-logo" src="/vital-logo.png" alt=""/></span><span><strong>Vital</strong><small>Diagnostic Centre</small></span></NavLink><p>Thoughtful diagnostics for healthier everyday decisions.</p></div>
         <div><span className="footer-label">Explore</span>{navItems.slice(1).map(([label,to]) => <NavLink key={to} to={to}>{label}</NavLink>)}</div>
         <div><span className="footer-label">Popular tests</span><NavLink to="/tests">CBC / Blood Test</NavLink><NavLink to="/tests">Thyroid / TSH</NavLink><NavLink to="/tests">Lipid Profile</NavLink><NavLink to="/tests">HbA1c</NavLink></div>
         <div><span className="footer-label">Visit us</span><p>123 Health Avenue<br/>Your City, India</p><a href="mailto:care@vitaldiagnosticcentre.com">care@vitaldiagnosticcentre.com</a></div>

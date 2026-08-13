@@ -1,0 +1,19 @@
+/* Client brand system: navy #303D72 and cyan #2CB7CA */
+.brand-logo{width:52px;height:52px;object-fit:contain;flex:0 0 auto}
+.footer-logo-box{width:58px;height:58px;border-radius:14px;background:#fff;display:grid;place-items:center;padding:4px}
+.footer-logo-box .brand-logo{width:50px;height:50px}
+.utility-bar,.footer,.contact-aside,.dark-section{background:#303d72}
+.button-dark,.stat-tile{background:#303d72}
+.button-lime{background:#2cb7ca;color:#303d72}
+.hero{background:linear-gradient(145deg,#f8faff 55%,#e8f8fb)}
+.header{background:rgba(248,250,255,.94);border-bottom-color:#dce5ef}
+.mobile-nav{background:#f8faff}
+.nav-links a{color:#596586}.nav-links a.active,.nav-links a:hover{color:#2cb7ca}
+.hero-card{background:#2cb7ca;box-shadow:0 18px 45px #303d7226}
+.trust-strip{background:#303d72}.trust-item svg,.stat-tile strong,.footer-label{color:#2cb7ca}
+.trust-item span{color:#d9e5f4}.check-list li{color:#56617f}.service-number{color:#8994b2}
+.footer-top p{color:#b9c4dd}.footer{color:#dbe3f2}.footer-bottom{color:#9eabc8}
+.footer .brand small{color:#aab6d0}.contact-detail span{color:#c6d0e5}.dark-section p{color:#c6d0e5}
+.program-showcase{background:linear-gradient(180deg,#fff 0%,#e8f8fb 100%)}
+.program-illustration{background:#dff5f8}.program-card-copy{background:#303d72}.program-card-copy p{color:#d9e5f4}.illustrated-program:hover .program-card-copy{background:#25325f}
+@media(max-width:620px){.brand-logo{width:44px;height:44px}.brand small{font-size:.62rem}}
