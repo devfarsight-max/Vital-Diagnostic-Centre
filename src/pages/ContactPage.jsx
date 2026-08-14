@@ -24,21 +24,23 @@ export default function ContactPage() {
               <Phone size={20} />
               <div>
                 <strong>Phone & WhatsApp</strong>
-                <span>+91 00000 00000</span>
+                <span>+91 9525119096</span>
               </div>
             </div>
             <div className="contact-detail">
               <Mail size={20} />
               <div>
                 <strong>Email</strong>
-                <span>care@vitaldiagnosticcentre.com</span>
+                <span>hukumdevkumar9525@gmail.com</span>
               </div>
             </div>
             <div className="contact-detail">
-              <MapPin size={20} />
+              <MapPin size={26} />
               <div>
                 <strong>Address</strong>
-                <span>123 Health Avenue, Your City</span>
+                <span>S/O Damodar Sah, Narahia, Ward-06,
+                  Narahia, Madhubani,
+                  Bihar – 847108</span>
               </div>
             </div>
             <div className="contact-detail">
