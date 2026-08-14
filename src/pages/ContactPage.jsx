@@ -1,38 +1,6 @@
-import { useState } from "react";
 import { Clock3, Mail, MapPin, Phone } from "lucide-react";
 
-const initial = {
-  name: "",
-  phone: "",
-  email: "",
-  test: "",
-  date: "",
-  message: "",
-};
 export default function ContactPage() {
-  const [form, setForm] = useState(initial);
-  const [errors, setErrors] = useState({});
-  const [sent, setSent] = useState(false);
-  const change = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: "" });
-    setSent(false);
-  };
-  const submit = (e) => {
-    e.preventDefault();
-    const next = {};
-    if (!form.name.trim()) next.name = "Please enter your name.";
-    if (!/^\+?[\d\s-]{7,15}$/.test(form.phone))
-      next.phone = "Enter a valid phone number.";
-    if (form.email && !/^\S+@\S+\.\S+$/.test(form.email))
-      next.email = "Enter a valid email.";
-    if (!form.test) next.test = "Please select a test.";
-    setErrors(next);
-    if (!Object.keys(next).length) {
-      setSent(true);
-      setForm(initial);
-    }
-  };
   return (
     <>
       <section className="page-hero">
@@ -40,8 +8,8 @@ export default function ContactPage() {
           <span className="eyebrow">Book & contact</span>
           <h1>Let’s make your next test simple.</h1>
           <p className="lead">
-            Share a few details and our team will contact you to confirm the
-            appointment and preparation instructions.
+            Visit our centre or contact our team for appointment and test
+            preparation guidance.
           </p>
         </div>
       </section>
@@ -81,84 +49,21 @@ export default function ContactPage() {
               </div>
             </div>
           </aside>
-          <form className="form-panel" onSubmit={submit} noValidate>
-            <h2>Request an appointment</h2>
-            <p>We’ll get back to you to confirm availability.</p>
-            <div className="form-grid">
-              <label className="field">
-                <span>Full name *</span>
-                <input
-                  name="name"
-                  value={form.name}
-                  onChange={change}
-                  placeholder="Your name"
-                />
-                {errors.name && <small>{errors.name}</small>}
-              </label>
-              <label className="field">
-                <span>Phone number *</span>
-                <input
-                  name="phone"
-                  value={form.phone}
-                  onChange={change}
-                  placeholder="+91"
-                />
-                {errors.phone && <small>{errors.phone}</small>}
-              </label>
-              <label className="field">
-                <span>Email (optional)</span>
-                <input
-                  name="email"
-                  value={form.email}
-                  onChange={change}
-                  placeholder="you@example.com"
-                />
-                {errors.email && <small>{errors.email}</small>}
-              </label>
-              <label className="field">
-                <span>Test *</span>
-                <select name="test" value={form.test} onChange={change}>
-                  <option value="">Choose a test</option>
-                  <option>CBC / Blood Test</option>
-                  <option>HbA1c</option>
-                  <option>Lipid Profile</option>
-                  <option>Thyroid / TSH</option>
-                  <option>LFT</option>
-                  <option>KFT</option>
-                  <option>Other / Not sure</option>
-                </select>
-                {errors.test && <small>{errors.test}</small>}
-              </label>
-              <label className="field">
-                <span>Preferred date</span>
-                <input
-                  type="date"
-                  name="date"
-                  value={form.date}
-                  onChange={change}
-                />
-              </label>
-              <label className="field full">
-                <span>Anything we should know?</span>
-                <textarea
-                  rows="4"
-                  name="message"
-                  value={form.message}
-                  onChange={change}
-                  placeholder="Prescription details, preferred time or questions"
-                />
-              </label>
+
+          <section className="map-panel" aria-labelledby="location-heading">
+            <div className="map-panel-heading">
+              <span className="eyebrow">Our location</span>
+              <h2 id="location-heading">Find us on the map</h2>
+              <p>Plan your visit and get directions to Vital Diagnostic Centre.</p>
             </div>
-            <button className="button button-dark" type="submit">
-              Send appointment request
-            </button>
-            {sent && (
-              <p className="success" role="status">
-                Thank you. Your request has been received and our team will
-                contact you shortly.
-              </p>
-            )}
-          </form>
+            <iframe
+              title="Vital Diagnostic Centre location"
+              src="https://www.google.com/maps?q=123+Health+Avenue,+Your+City&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </section>
         </div>
       </section>
     </>

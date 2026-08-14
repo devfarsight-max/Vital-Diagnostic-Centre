@@ -9,6 +9,17 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
+const heroStagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.09, delayChildren: 0.08 } },
+};
+
+const heroItem = {
+  hidden: { opacity: 0, y: 22 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
+};
 
 const services = [
   ["Blood testing", "Routine and specialised blood investigations."],
@@ -22,24 +33,24 @@ export default function HomePage() {
     <>
       <section className="hero">
         <div className="container hero-grid">
-          <div className="hero-copy">
-            <span className="eyebrow">Local care, laboratory precision</span>
-            <h1>
+          <motion.div className="hero-copy" variants={heroStagger} initial="hidden" animate="show">
+            <motion.span className="eyebrow" variants={heroItem}>Local care, laboratory precision</motion.span>
+            <motion.h1 variants={heroItem}>
               Answers that move your health <span>forward.</span>
-            </h1>
-            <p className="lead">
+            </motion.h1>
+            <motion.p className="lead" variants={heroItem}>
               Reliable diagnostic testing, clear guidance and a patient-first
               experience—all in one trusted neighbourhood centre.
-            </p>
-            <div className="hero-actions">
+            </motion.p>
+            <motion.div className="hero-actions" variants={heroItem}>
               <Link className="button button-dark" to="/contact">
                 Book your test <ArrowUpRight size={18} />
               </Link>
               <Link className="button button-outline" to="/tests">
                 Explore all tests
               </Link>
-            </div>
-            <div className="micro-proof">
+            </motion.div>
+            <motion.div className="micro-proof" variants={heroItem}>
               <span>
                 <CheckCircle2 size={16} /> Timely reports
               </span>
@@ -49,18 +60,18 @@ export default function HomePage() {
               <span>
                 <CheckCircle2 size={16} /> Patient-first care
               </span>
-            </div>
-          </div>
-          <div className="hero-media">
+            </motion.div>
+          </motion.div>
+          <motion.div className="hero-media" initial={{ opacity: 0, scale: 0.96, x: 24 }} animate={{ opacity: 1, scale: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}>
             <img
               src="/images/WhatsApp%20Image%202026-08-08%20at%2012.19.53%20PM.jpeg"
               alt="Vital Diagnostic Centre laboratory team and equipment"
             />
-            <div className="hero-card">
+            <motion.div className="hero-card" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.65, duration: 0.5 }}>
               <strong>Testing made simpler</strong>
               <span>Call, WhatsApp or request an appointment online.</span>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
       <section className="trust-strip">
