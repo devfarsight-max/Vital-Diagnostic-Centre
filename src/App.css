@@ -631,23 +631,73 @@ h3 {
   .menu-button {
     display: grid;
     place-items: center;
-    background: none;
-    border: 0;
-    color: var(--ink);
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid #d7e2ec;
+    border-radius: 12px;
+    background: #fff;
+    color: #303d72;
+    cursor: pointer;
+    box-shadow: 0 5px 16px rgba(48, 61, 114, 0.08);
+    transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+  }
+  .menu-button:hover {
+    background: #e8f8fb;
+    border-color: #a9dfe6;
+  }
+  .menu-button:active {
+    transform: scale(.96);
+  }
+  .menu-button:focus-visible {
+    outline: 3px solid rgba(44, 183, 202, .25);
+    outline-offset: 2px;
   }
   .mobile-nav.open {
     display: flex;
   }
-  .mobile-nav {
-    padding: 16px 20px 24px;
-    background: #f8faf7;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .mobile-nav > a:not(.button) {
+  .header .mobile-nav {
+    width: min(100% - 32px, 520px);
+    margin: 0 auto 14px;
     padding: 10px;
+    background: rgba(255, 255, 255, .98);
+    border: 1px solid #dce5ef;
+    border-radius: 18px;
+    flex-direction: column;
+    gap: 4px;
+    overflow: hidden;
+    box-shadow: 0 22px 55px rgba(48, 61, 114, .16);
+  }
+  .mobile-nav > div {
+    width: 100%;
+  }
+  .mobile-nav > div > a:not(.button) {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 14px;
+    border-radius: 11px;
     text-decoration: none;
     font-weight: 700;
+    color: #303d72;
+    transition: color .2s ease, background-color .2s ease, padding-left .2s ease;
+  }
+  .mobile-nav > div > a:not(.button):hover {
+    color: #238fa0;
+    background: #f0fafb;
+    padding-left: 18px;
+  }
+  .mobile-nav > div > a:not(.button).active {
+    color: #303d72;
+    background: #dff5f8;
+  }
+  .mobile-nav .button {
+    width: 100%;
+    margin-top: 7px;
+    border-radius: 12px;
+    background: #2cb7ca;
+    color: #25325f;
+    box-shadow: none;
   }
   .hero-grid,
   .split,
