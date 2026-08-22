@@ -275,7 +275,7 @@ export default function App() {
             <div>
               <span className="footer-label">Popular tests</span>
               <NavLink to="/tests">CBC / Blood Test</NavLink>
-              <NavLink to="/tests">Thyroid / TSH</NavLink>
+              <NavLink to="/tests">Blood Sugar</NavLink>
               <NavLink to="/tests">Lipid Profile</NavLink>
               <NavLink to="/tests">HbA1c</NavLink>
             </div>
